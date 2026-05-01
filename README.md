@@ -14,3 +14,33 @@
 ---
 
 ## 🧩 系统架构
+用户输入主题
+↓
+趋势分析 Agent
+↓
+内容生成 Agent
+↓
+爆款优化 Agent
+↓
+内容输出（批量生成）
+
+## 🚀 快速开始
+
+```bash
+pip install -r requirements.txt
+python main.py
+🧠 核心逻辑
+
+系统采用多Agent协作机制：
+
+Trend Agent：热点分析 + 用户痛点识别
+Content Agent：基于长链推理生成内容
+Rewrite Agent：爆款优化，提高传播效果
+
+形成完整自动化闭环。
+
+📌 应用场景
+新媒体运营
+内容创业
+AI自动变现
+账号矩阵运营
