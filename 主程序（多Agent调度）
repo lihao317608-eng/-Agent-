@@ -1,0 +1,44 @@
+from agents.trend_agent import analyze_trend
+from agents.content_agent import generate_content
+from agents.rewrite_agent import rewrite_content
+import time
+
+def run(topics):
+    results = []
+
+    for topic in topics:
+        print(f"\n🔥 处理主题: {topic}")
+
+        # 1️⃣ 趋势分析
+        trend = analyze_trend(topic)
+        print("✅ 趋势分析完成")
+
+        # 2️⃣ 内容生成
+        content = generate_content(topic, trend)
+        print("✅ 内容生成完成")
+
+        # 3️⃣ 爆款改写
+        final_content = rewrite_content(content)
+        print("✅ 改写完成")
+
+        results.append(f"主题：{topic}\n{final_content}\n{'='*50}")
+
+        time.sleep(1)  # 防限速
+
+    return results
+
+
+if __name__ == "__main__":
+    topics = [
+        "大学生副业",
+        "自律学习",
+        "减肥经验",
+        "AI赚钱"
+    ]
+
+    outputs = run(topics)
+
+    with open("output/contents.txt", "w", encoding="utf-8") as f:
+        f.write("\n\n".join(outputs))
+
+    print("\n🎉 全部完成，已保存到 output/contents.txt")
