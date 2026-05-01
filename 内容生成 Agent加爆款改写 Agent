@@ -1,0 +1,36 @@
+from utils.openai_client import chat
+
+def generate_content(topic, trend):
+    prompt = f"""
+根据以下热点分析生成一篇爆款内容（小红书风格）：
+
+主题：{topic}
+
+热点分析：
+{trend}
+
+要求：
+- 标题吸引人（带情绪/数字）
+- 结构清晰
+- 适合平台传播
+- 300-500字
+"""
+
+    return chat(prompt)
+
+from utils.openai_client import chat
+
+def rewrite_content(content):
+    prompt = f"""
+请将以下内容改写成更容易爆款的版本：
+
+要求：
+- 更有情绪
+- 更有代入感
+- 提升点击率
+
+原内容：
+{content}
+"""
+
+    return chat(prompt)
