@@ -1,0 +1,15 @@
+from utils.openai_client import chat
+
+def analyze_trend(topic):
+    prompt = f"""
+你是小红书/公众号爆款分析专家，请分析以下主题的热点方向：
+
+主题：{topic}
+
+请输出：
+1. 当前热门切入点（3个）
+2. 用户痛点
+3. 爆款标题关键词
+"""
+
+    return chat(prompt)
